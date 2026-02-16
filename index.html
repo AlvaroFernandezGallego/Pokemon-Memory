@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokémon Memory Game</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="selection-screen" id="selection-screen">
+  <h1>Pokémon Memory Game</h1>
+  <h2 class="subtitle">Find all matching pairs before the time runs out!</h2>
+
+  <div class="rules-box">
+    <p>Welcome to the Pokémon Memory Game!<br>
+    - Select a Pokémon generation to start.<br>
+    - There are 12 cards (6 pairs) shuffled randomly.<br>
+    - Click two cards to flip them.<br>
+    - If they match, they stay flipped; otherwise, they flip back after 1 second.<br>
+    - You have 30 seconds to find all pairs.<br>
+    - Good luck!</p>
+  </div>
+
+  <div class="generation-options">
+    <select id="gen-select">
+      <option value="1">Generation 1 (Kanto)</option>
+      <option value="2">Generation 2 (Johto)</option>
+      <option value="3">Generation 3 (Hoenn)</option>
+      <option value="4">Generation 4 (Sinnoh)</option>
+      <option value="5">Generation 5 (Unova)</option>
+      <option value="6">Generation 6 (Kalos)</option>
+      <option value="7">Generation 7 (Alola)</option>
+      <option value="8">Generation 8 (Galar)</option>
+      <option value="9">Generation 9 (Paldea)</option>
+    </select>
+    <button id="start-game">Start Game</button>
+  </div>
+</div>
+
+<div class="container" id="game-container" style="display:none;">
+  <h1>Pokémon Memory Game</h1>
+  <h2 class="subtitle">Find all matching pairs before time runs out!</h2>
+  <div class="controls">
+    <div id="timer-container">
+      <svg id="timer-svg" width="60" height="60">
+        <circle cx="30" cy="30" r="28" stroke="#2a75bb" stroke-width="4" fill="none"/>
+        <circle id="timer-circle" cx="30" cy="30" r="28" stroke="#ff3e3e" stroke-width="4" fill="none"
+          stroke-dasharray="176" stroke-dashoffset="0" transform="rotate(-90 30 30)"/>
+      </svg>
+      <div id="timer-text">30s</div>
+    </div>
+    <button id="restart">Play Again</button>
+  </div>
+  <div id="game-board" class="game-board"></div>
+</div>
+
+<div id="result-modal" class="modal">
+  <div class="modal-content">
+    <p id="result-text">You Won!</p>
+    <button id="modal-again">Again</button>
+  </div>
+</div>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
